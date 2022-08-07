@@ -2,10 +2,12 @@ type Query {
     photoById(id: ID): Photo
 }
 
+scalar DateTime
 
 type Photo {
     id: ID
     name: String
+    createdDate: DateTime
     owner: Author
 }
 
