@@ -1,8 +1,10 @@
 type Query {
     photoById(id: ID): Photo
+    videoById(id: ID): Video
 }
 
 scalar DateTime
+#scalar Long
 
 type Photo {
     id: ID
