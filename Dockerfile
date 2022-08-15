@@ -1,13 +1,5 @@
-FROM eclipse-temurin:17-jdk-alpine as builder
-WORKDIR /opt/app
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline
-COPY ./src ./src
-RUN ./mvnw clean install -P docker
-
 FROM eclipse-temurin:17-jre-alpine
-WORKDIR /opt/app
-COPY --from=builder /opt/app/target/*.jar  /opt/app/*.jar
+COPY /target/*.jar  /opt/app/*.jar
 EXPOSE 8080
+WORKDIR /opt/app
 ENTRYPOINT ["java","-Dspring.profiles.active=docker" ,"-jar","/opt/app/*.jar"]
