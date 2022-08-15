@@ -19,12 +19,12 @@ public class MongoConfiguration {
     @Bean
     public MongoCustomConversions customConversions(){
         List<Converter<?,?>> converters = new ArrayList<>();
-        converters.add(DateToZonedDateTimeConverter.INSTANCE);
-        converters.add( ZonedDateTimeToDateConverter.INSTANCE);
+        converters.add(DateToOffsetDateTimeConverter.INSTANCE);
+        converters.add(OffsetDateTimeToDateConverter.INSTANCE);
         return new MongoCustomConversions(converters);
     }
 
-    enum DateToZonedDateTimeConverter implements Converter<Date, OffsetDateTime> {
+    enum DateToOffsetDateTimeConverter implements Converter<Date, OffsetDateTime> {
 
         INSTANCE;
 
@@ -34,7 +34,7 @@ public class MongoConfiguration {
         }
     }
 
-    enum ZonedDateTimeToDateConverter implements Converter<OffsetDateTime, Date> {
+    enum OffsetDateTimeToDateConverter implements Converter<OffsetDateTime, Date> {
 
         INSTANCE;
 
