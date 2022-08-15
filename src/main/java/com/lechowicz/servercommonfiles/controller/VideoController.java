@@ -27,9 +27,7 @@ public class VideoController {
         if(this.videoService.getVideoById(id).isPresent()){
             return this.videoService.getVideoById(id).get();
         } else{
-            Video video = new Video("video-1", "The lord of the Ring", new Date(System.currentTimeMillis()), "author-1", 120L, "C:/");
-            this.videoService.addVideo(video);
-            return video;
+            return null;
         }
     }
 }

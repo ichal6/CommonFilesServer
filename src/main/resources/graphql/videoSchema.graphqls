@@ -3,6 +3,6 @@ type Video {
     name: String
     createdDate: DateTime
     owner: Author
-#    lengthInSeconds: Long
+    lengthInSeconds: Long
     url: String
 }
