@@ -6,3 +6,15 @@ type Video {
     lengthInSeconds: Long
     url: String
 }
+
+input VideoInput {
+    name: String!
+    createdDate: DateTime
+    ownerId: ID
+    lengthInSeconds: Long
+    url: String
+}
+
+type Mutation {
+    addVideo(input: VideoInput!): Video
+}

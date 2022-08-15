@@ -1,6 +1,7 @@
 package com.lechowicz.servercommonfiles.service;
 
 import com.lechowicz.servercommonfiles.model.Video;
+import com.lechowicz.servercommonfiles.model.VideoInput;
 import com.lechowicz.servercommonfiles.repository.VideoRepository;
 import org.springframework.stereotype.Service;
 
@@ -25,5 +26,10 @@ public class VideoService {
 
     public void addVideo(Video newVideo){
         videoRepository.insert(newVideo);
+    }
+
+    public Video addVideo(VideoInput inputVideo){
+        Video newVideo = new Video(inputVideo.name(), inputVideo.createdDate(), inputVideo.ownerId(), inputVideo.lengthInSeconds(), inputVideo.url());
+        return videoRepository.insert(newVideo);
     }
 }
