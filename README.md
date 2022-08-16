@@ -27,6 +27,7 @@
 ## Technologies Used
 - Docker
 - Java 17
+- Maven
 - Spring Boot
 - MongoDB
 - GraphQL
@@ -52,15 +53,34 @@
 
 ## Setup
 1. You have to install Docker for running this app -> [link](https://www.docker.com/get-started);
-2. In the next step please open terminal in main directory of project and provide:
+2. Please download docker image from [Docker Hub](https://hub.docker.com/r/ichal6/common-files-server):
+```shell
+docker pull ichal6/common-files-server
 ```
+> **If you want to create a local Docker image or run program without Docker, make these instructions:**
+> 1. Install a local version of MongoDB: [instructions](https://www.mongodb.com/docs/manual/installation/)
+> 2. After this you can use run program from maven:
+> ```shell
+> mvn package -P dev
+> ```
+> This command prepare *jar* file with an application in folder target.
+> 3. You can run program from command:
+> ```shell
+> java -Dspring.profiles.active=docker -jar [NAME OF JAR FILE].jar
+> ```
+> 4. Now you can build a Docker image:
+> ```shell
+> docker build . -t cf-server
+> ```
+
+3. In the next step please open terminal in main directory of project and provide:
+```shell
 docker-compose build 
 docker-compose up
 ```
 - **If you run this at the first time program need more time and Internet connection!**
 
-3. Please wait a moment (program need a time for initialize) and insert in your web browser **http://localhost:8080/**
-
+4. Please wait a moment (program need a time for initialize) and insert in your web browser **http://localhost:8080/**
 
 ## Project Status
 Project is: _in progress_. <!-- If you are no longer working on it, provide reasons why. -->
