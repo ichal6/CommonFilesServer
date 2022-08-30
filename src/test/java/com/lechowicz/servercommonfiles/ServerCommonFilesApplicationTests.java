@@ -21,7 +21,7 @@ class ServerCommonFilesApplicationTests {
 	}
 
 	@Test
-	public void givenSavedVideo_TimeIsRetrievedCorrectly(@Autowired MongoTemplate videoRepository) {
+	public void givenSavedVideoTimeIsRetrievedCorrectly(@Autowired MongoTemplate videoRepository) {
 		String id = "testId";
 		OffsetDateTime date = OffsetDateTime.of(2022, 8, 15, 18, 38, 59, 49, ZoneOffset.UTC);
 
