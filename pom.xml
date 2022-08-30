@@ -17,6 +17,7 @@
 		<java.version>17</java.version>
 		<junit.jupiter.version>5.8.1</junit.jupiter.version>
 		<junit.platform.version>1.8.1</junit.platform.version>
+		<spring.security.version>2.7.3</spring.security.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -82,6 +83,16 @@
 			<artifactId>de.flapdoodle.embed.mongo</artifactId>
 			<version>3.4.8</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+			<version>${spring.security.version}</version>
 		</dependency>
 
 	</dependencies>
